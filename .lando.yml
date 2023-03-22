@@ -1,0 +1,9 @@
+name: austin-freelance
+recipe: laravel
+config:
+  webroot: public
+  php: '8.1'
+  via: nginx
+  database: 'postgres:10'
+  xdebug: true
+  cache: redis
