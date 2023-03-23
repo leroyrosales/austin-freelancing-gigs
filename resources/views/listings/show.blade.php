@@ -49,6 +49,15 @@
             </div>
         </div>
     </x-card>
+    <x-card>
+        <a href="/listings/{{ $listing->id }}/edit">Edit listing</a>
+
+        <form method="POST" action="/listings/{{ $listing->id }}">
+            @csrf
+            @method('DELETE')
+            <button>Delete</button>
+        </form>
+    </x-card>
 </div>
 
 </x-layout>

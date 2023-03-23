@@ -22,6 +22,15 @@ Route::get('/', [ListingController::class, 'index']);
 // Show create form
 Route::get('/listings/create', [ListingController::class, 'create']);
 
+// Show edit form
+Route::get('/listings/{listing}/edit', [ListingController::class, 'edit']);
+
+// Update edited listing
+Route::put('/listings/{listing}', [ListingController::class, 'update']);
+
+// Delete listing
+Route::delete('/listings/{listing}', [ListingController::class, 'destroy']);
+
 // Store listing data
 Route::post('/listings', [ListingController::class, 'store']);
 
