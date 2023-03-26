@@ -35,6 +35,9 @@ Route::delete('/listings/{listing}', [ListingController::class, 'destroy'])->mid
 // Store listing data
 Route::post('/listings', [ListingController::class, 'store']);
 
+// Manage listings
+Route::get('/listings/manage', [ListingController::class, 'manage'])->middleware('auth');
+
 // Single listings
 Route::get('/listings/{listing}', [ListingController::class, 'show']);
 
@@ -52,6 +55,7 @@ Route::get('/login', [UserController::class, 'login'])->name('login')->middlewar
 
 // Login form
 Route::post('/users/authenticate', [UserController::class, 'authenticate']);
+
 
 // Route::get('/hello', function () {
 //     return response('<h1>hello world</h1>', 200)
