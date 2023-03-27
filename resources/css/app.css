@@ -5,3 +5,33 @@
 nav a {
     @apply text-white hover:opacity-50;
 }
+
+.homepage .headline {
+    grid-area: header;
+}
+
+.homepage .image {
+    grid-area: image;
+}
+
+.homepage .gigs {
+    grid-area: gigs;
+}
+
+.homepage {
+    grid-template-areas:
+        "header"
+        "gigs"
+        "gigs"
+        "gigs"
+        "image";
+}
+
+@media screen and (min-width: 1024px) {
+    .homepage {
+        grid-template-areas:
+            "header gigs"
+            "image gigs"
+            ". gigs";
+    }
+}
