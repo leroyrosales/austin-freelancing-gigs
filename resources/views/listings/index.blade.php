@@ -16,7 +16,7 @@
                     <x-listing-card :listing="$listing" />
                 </x-card>
             @endforeach
-            <div class="pt-12">{{ $listings->links() }}</div>
+            {{ $listings->links() }}
         @else
             <p>No listings found.</p>
         @endunless
