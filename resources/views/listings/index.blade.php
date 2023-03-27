@@ -10,7 +10,7 @@
     </div>
     <div>
         @unless(count($listings) == 0)
-            <h2 class="text-5xl font-bold text-green-800 pb-8">Newest gigs</h2>
+            <h2 class="text-5xl font-bold text-green-800 pb-8">Newest Gigs</h2>
             @foreach ($listings as $listing)
                 <x-card>
                     <x-listing-card :listing="$listing" />

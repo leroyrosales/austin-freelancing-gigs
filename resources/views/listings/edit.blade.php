@@ -142,7 +142,7 @@
 
             <div class="mb-6">
                 <button
-                    class="bg-laravel text-white rounded py-2 px-4 hover:bg-black"
+                    class="bg-green-600 text-white rounded py-2 px-4 hover:bg-black"
                 >
                     Update Gig
                 </button>

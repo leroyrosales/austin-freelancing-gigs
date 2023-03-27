@@ -11,23 +11,12 @@
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="//unpkg.com/alpinejs" defer></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        laravel: "#ef3b2d",
-                    },
-                },
-            },
-        };
-    </script>
     <title>Austin Freelance Gigs | Find Freelance Jobs & Projects in Austin, TX</title>
 </head>
 
 <body>
-    <nav class="flex justify-between items-center mb-4 bg-green-800">
-        <a href="/"><img class="w-24" src="{{ asset('images/logo.png') }}" alt="" class="logo" /></a>
+    <nav class="flex flex-col lg:flex-row justify-between lg:items-center mb-4 bg-green-800 p-6">
+        <a href="/" class="flex items-center gap-2 mb-6 lg:mb-0"><img class="w-24" src="{{ asset('images/logo.png') }}" alt="" class="logo" /> <span class="text-6xl font-bold m-0 p-0">AFG</span></a>
         <ul class="flex space-x-6 mr-6 text-lg">
             @auth
                 <li>
@@ -52,6 +41,9 @@
                         Login</a>
                 </li>
             @endauth
+                <li>
+                    <a href="/listings/create" class="bg-black text-white py-4 px-8"><i class="fa-solid fa-briefcase text-white"></i> Post a Job</a>
+                </li>
         </ul>
     </nav>
 
@@ -60,10 +52,9 @@
    </main>
 
    <footer
-   class="bg-black bottom-0 left-0 w-full flex items-center justify-start font-bold bg-laravel text-white h-24 mt-24 opacity-90 md:justify-center">
-   <p class="ml-2">Copyright &copy; {{ now()->year }}, All Rights reserved</p>
+   class="bg-black w-full flex items-center justify-start text-white h-24 mt-24 md:justify-center">
+   <p class="ml-2">Copyright &copy; {{ now()->year }} Austin Freelance Gigs, All Rights reserved</p>
 
-   <a href="/listings/create" class=" top-1/3 right-10 bg-black text-white py-2 px-5">Post Job</a>
 </footer>
 <x-flash-message/>
 </body>
