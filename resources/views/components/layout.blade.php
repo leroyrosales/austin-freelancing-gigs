@@ -15,37 +15,49 @@
 </head>
 
 <body>
-    <nav class="flex flex-col lg:flex-row justify-between lg:items-center mb-4 bg-green-800 p-6">
-        <a href="/" class="flex items-center gap-2 mb-6 lg:mb-0"><img class="w-24" src="{{ asset('images/logo.png') }}" alt="" class="logo" /> <span class="text-6xl font-bold m-0 p-0">AFG</span></a>
-        <ul class="flex space-x-6 mr-6 text-lg">
-            @auth
-                <li>
-                    <strong>Welcome {{auth()->user()->name}}</strong>
-                </li>
-                <li>
-                    <a href="/listings/manage" class="hover:text-laravel"><i class="fa-solid fa-gear"></i>
-                        Manage Listings</a>
-                </li>
-                <li>
-                    <form action="/logout" method="POST">
-                        @csrf
-                        <button type="Submit">Logout</button>
-                    </form>
-                </li>
-            @else
-                <li>
-                    <a href="/register" class="hover:text-laravel"><i class="fa-solid fa-user-plus"></i> Register</a>
-                </li>
-                <li>
-                    <a href="/login" class="hover:text-laravel"><i class="fa-solid fa-arrow-right-to-bracket"></i>
-                        Login</a>
-                </li>
-            @endauth
-                <li>
-                    <a href="/listings/create" class="bg-black text-white py-4 px-8"><i class="fa-solid fa-briefcase text-white"></i> Post a Job</a>
-                </li>
-        </ul>
-    </nav>
+
+    <header class="sticky inset-x-0 top-0 z-50 border-b-2 border-gray-100 bg-white dark:border-gray-800 dark:bg-green-900 py-4">
+        <div class="mx-auto max-w-screen-xl px-4 py-2">
+            <div class="relative flex flex-row items-center justify-between gap-8">
+                <div>
+                    <a class="text-sm inline-flex gap-1.5  font-medium text-gray-900 dark:text-white" href="/">
+                        <span>Austin Freelance Gigs</span>
+                        <span aria-hidden="true" role="img">🚀</span>
+                    </a>
+                </div>
+                <nav aria-label="Page Nav" class="flex flex-row items-center gap-4">
+                    <ul class="flex flex-row gap-8">
+                    @auth
+                        <li>
+                            <strong>Welcome {{auth()->user()->name}}</strong>
+                        </li>
+                        <li>
+                            <a href="/listings/manage" class="hover:text-laravel"><i class="fa-solid fa-gear"></i>
+                                Manage Listings</a>
+                        </li>
+                        <li>
+                            <form action="/logout" method="POST">
+                                @csrf
+                                <button type="Submit">Logout</button>
+                            </form>
+                        </li>
+                    @else
+                        <li>
+                            <a href="/register" class="hover:text-laravel"><i class="fa-solid fa-user-plus"></i> Register</a>
+                        </li>
+                        <li>
+                            <a href="/login" class="hover:text-laravel"><i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                Login</a>
+                        </li>
+                    @endauth
+                        <li>
+                            <a href="/listings/create" class="bg-black text-white py-4 px-8"><i class="fa-solid fa-briefcase text-white"></i> Post a Job</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
 
    <main>
     {{ $slot }}
